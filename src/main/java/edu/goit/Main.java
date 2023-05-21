@@ -25,12 +25,11 @@ public class Main {
         client.setName("Update Name");
         clientCrudService.update(client);
         System.out.println(clientCrudService.get(4L));
-        client.setId(20);
-        client.setName("Create new client");
-        clientCrudService.create(client);
-        System.out.println(clientCrudService.get(20L));
-        clientCrudService.delete(client);
-        System.out.println(clientCrudService.get(20L));
+        Client newClient = Client.builder().name("New client").build();
+        clientCrudService.create(newClient);
+        System.out.println(clientCrudService.get(11L));
+        clientCrudService.delete(Client.builder().id(6L).build());
+        System.out.println(clientCrudService.get(6L));
 
         System.out.println(planetCrudService.get("SAT"));
 
